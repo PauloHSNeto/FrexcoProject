@@ -1,9 +1,7 @@
 from rest_framework import serializers
 from FrexcoDesafio import models
 
-
-class FrexcoDesafioSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Fruit
-        model2 = models.Region
-        fields = '__all__'
+class DesafioSerializers(serializers.ModelSerializer):
+        class Meta:
+          model = models.Region
+          fields  = "__all__"

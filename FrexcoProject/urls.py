@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from FrexcoDesafio.api import viewsets as frexcoViewsets
+from FrexcoDesafio.api import viewsets as desafioviewsets
 route = routers.DefaultRouter()
-route.register(r'fruits/',frexcoViewsets.FrexcoDesafioViewSet,basename="FRUITS")
+
+route.register(r'Region/', desafioviewsets.DesafioViewSet,basename="Region")
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(route.url))
+    path('', include(route.urls))
 ]
